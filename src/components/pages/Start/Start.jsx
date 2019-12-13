@@ -6,10 +6,13 @@ const Start = () => {
     const title = 'Start';
     const description = 'Testing new layout';
     const renderPlot = () => {
-        let svg = d3.select('#canvas')
-            .append('svg')
-            .attr('height', '100%')
-            .attr('width', '100%');
+        let svg = d3.select("#canvas-start")
+          .append("svg")
+          .attr("height", "100%")
+          .attr("width", "100%");
+
+        let svgHeight = svg.style('height');
+        let svgWidth = svg.style("width");  
 
         svg.append('rect')
             .attr('width', 400)
@@ -33,10 +36,12 @@ const Start = () => {
           .attr("stroke", "yellow");    
     };
     return (
-        <SinglePlotLayout 
-            title={title} 
-            description={description}
-            renderPlot={ renderPlot } />
+      <SinglePlotLayout
+        id="canvas-start"
+        title={title}
+        description={description}
+        renderPlot={renderPlot}
+      />
     );
 }
 

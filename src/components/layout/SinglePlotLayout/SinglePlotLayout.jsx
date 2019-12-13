@@ -28,7 +28,7 @@ const Title = styled.h2`
 const Row = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-between;
   height: 100%;
 `;
 
@@ -40,15 +40,15 @@ const Canvas = styled.div`
   margin: 20px 20px 20px 60px;
   padding: 10px;
   border: 1px solid black;
-  width: 100%;
+  width: 60vw;
 `;
 
-const SinglePlotLayout = ({ title, description, renderPlot, ...rest }) => {
+const SinglePlotLayout = ({ title, id, description, renderPlot, ...rest }) => {
   
   const cleanUp = () => {
       return d3
-        .select("#canvas")
-        .selectAll("svg")
+        .select(`#${id}`)
+        .select("svg")
         .remove();
   }
   useEffect(() => {
@@ -63,7 +63,7 @@ const SinglePlotLayout = ({ title, description, renderPlot, ...rest }) => {
             <Title>{title}</Title>
             <p>{description}</p>
           </div>
-          <Canvas id="canvas" />
+          <Canvas id={`${id}`} />
         </Row>
       </ContentWrapper>
     </PageWrapper>
