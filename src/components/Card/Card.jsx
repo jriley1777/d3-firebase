@@ -10,6 +10,12 @@ const CardWrapper = styled(Link)`
   background: white;
   text-decoration: none;
   color: black;
+  box-shadow: 1px 1px 2px black;
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 1px 1px 10px black;
+  }
 `;
 
 const CardContent = styled.div`
