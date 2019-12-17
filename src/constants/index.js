@@ -6,16 +6,19 @@ export const ROUTES = [
          {
            name: "Start",
            path: "/start",
-           component: Start
+           component: Start,
+           description: "A test for drawing shapes on svg"
          },
          {
            name: "Bar",
            path: "/bar",
-           component: Bar
-          },
-          {
-            name: "FireBar",
-            path: "/firebar",
-            component: FireBar
-          }
+           component: Bar,
+           description: "A basic bar graph with scales and axes"
+         },
+         {
+           name: "FireBar",
+           path: "/firebar",
+           component: FireBar,
+           description: "A bar graph connected to a firestore db"
+         }
        ];

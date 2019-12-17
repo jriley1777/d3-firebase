@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Switch, Route } from 'react-router-dom';
 import AnimatedRoutes from "../AnimatedRoutes/AnimatedRoutes";
 
-import App from '../App/App';
+import App from '../pages/App/App';
 
 const StyledMissingDiv = styled.div`
     display: flex;
