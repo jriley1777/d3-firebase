@@ -43,7 +43,7 @@ const Canvas = styled.div`
   width: 60vw;
 `;
 
-const SinglePlotLayout = ({ title, id, description, renderPlot, ...rest }) => {
+const SinglePlotLayout = ({ title, id, description, renderPlot, children, ...rest }) => {
   
   const cleanUp = () => {
       return d3
@@ -54,7 +54,7 @@ const SinglePlotLayout = ({ title, id, description, renderPlot, ...rest }) => {
   useEffect(() => {
     renderPlot();
     return cleanUp;
-  });
+  }, []);
   return (
     <PageWrapper {...rest}>
       <ContentWrapper>
@@ -62,6 +62,7 @@ const SinglePlotLayout = ({ title, id, description, renderPlot, ...rest }) => {
           <div>
             <Title>{title}</Title>
             <p>{description}</p>
+            { children }
           </div>
           <Canvas id={`${id}`} />
         </Row>

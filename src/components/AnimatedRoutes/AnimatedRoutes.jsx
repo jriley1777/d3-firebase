@@ -15,7 +15,9 @@ const AnimatedRoutes = () => {
     <animated.div key={key} style={props}>
       <Switch location={location}>
         {ROUTES.map(route => (
-          <Route key={route.path} exact path={route.path} render={route.component} />
+          <Route key={route.path} exact path={route.path} render={() => {
+            return <route.component />
+          }} />
         ))}
       </Switch>
     </animated.div>

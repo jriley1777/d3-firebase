@@ -7,8 +7,11 @@ class Firebase {
         app.initializeApp(config);
         this.db = app.firestore();
     }
-    getCollection(collectionName) {
-        return this.db.collection(collectionName).get();
+    getCollection(collection) {
+        return this.db.collection(collection).get();
+    }
+    post(collection, document, data) {
+        return this.db.collection(collection).doc(document).set(data)
     }
 }
 
